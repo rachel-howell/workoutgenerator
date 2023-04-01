@@ -21,7 +21,10 @@ const WorkoutCalc = () => {
         questions.map((q)=>(
           <div>
             <h1>{q.question}</h1>
-            <p>{q.options}</p>
+            <p>{q.options.map((opt)=>{
+              <h1>hi{ opt}</h1>
+            })}</p>
+            {/* make the map work */}
           </div>
         ))
       }
