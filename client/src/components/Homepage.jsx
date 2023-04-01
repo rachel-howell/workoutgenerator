@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { WorkoutContext } from './WorkoutContext';
+import { useeNavigate } from 'react-router-dom'
 
 const Homepage = () => {
 
-    const [ userPreference, setUserPreference ] = useState("");
+
+    const { setUserPreference } = useContext(WorkoutContext)
 
     const options = ["random", "focus", "custom"];
 
-    const workoutHandler = (userPreference) =>{
-
+    const workoutHandler = (option) =>{
+        setUserPreference(option);
+        if(option == options[1] || option == options[2]) {
+            // navigate to the calculator
+        } else {
+            // navigate to the generator
+        }
     }
 
   return (

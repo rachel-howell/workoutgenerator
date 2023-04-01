@@ -1,10 +1,13 @@
 import './App.css';
 import Homepage from './components/Homepage';
+import { WorkoutProvider } from './components/WorkoutContext';
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <WorkoutProvider>
+        <Homepage />
+      </WorkoutProvider>
     </div>
   );
 }
