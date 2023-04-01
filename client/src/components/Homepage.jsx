@@ -1,20 +1,23 @@
 import React, { useState, useContext } from 'react'
 import { WorkoutContext } from './WorkoutContext';
-import { useeNavigate } from 'react-router-dom'
+import { useNavigate, useeNavigate } from 'react-router-dom'
 
 const Homepage = () => {
 
 
     const { setUserPreference } = useContext(WorkoutContext)
 
+    const nav = useNavigate();
+
     const options = ["random", "focus", "custom"];
 
     const workoutHandler = (option) =>{
         setUserPreference(option);
         if(option == options[1] || option == options[2]) {
-            // navigate to the calculator
+            nav('/quiz')
+            
         } else {
-            // navigate to the generator
+           nav('/workout')
         }
     }
 

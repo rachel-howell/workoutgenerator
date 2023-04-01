@@ -9,15 +9,22 @@ const WorkoutCalc = () => {
     { question: "How many exercises would you like to do?", options: [1,2,3,4,5,6,7,8] },
     { question: "What muscle group(s) would you like to focus on?", options: ["Glutes only", "Hamstrings", "Quads", "Unilaterals"] },
     { question: "What equipment is available to you?", options: ["Body Weight Only", "Dumbbells", "Barbell", "Bands", "Kettlebells", "Gym Machines"]},
-    { question: "Would you like to include a burnout exercise at the end?", options: [true, false] }
+    { question: "Would you like to include an additional burnout exercise at the end?", options: ["Yes", "No"] }
   ]
 
   const submitHandler = () => {
-    e.preventDefault();
   }
 
   return (
     <div>
+      {
+        questions.map((q)=>(
+          <div>
+            <h1>{q.question}</h1>
+            <p>{q.options}</p>
+          </div>
+        ))
+      }
     </div>
   )
 }
